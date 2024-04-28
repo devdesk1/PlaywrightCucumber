@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "cucumber-js test || true",
-    "posttest": "npx ts-node src/helper/report.ts"
+    "posttest": "npx ts-node src/helper/report.ts",
+    "test:failed": "cucumber-js -p rerun @rerun.txt"
   },
   "keywords": [
     "playwright",

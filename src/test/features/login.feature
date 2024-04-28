@@ -8,7 +8,7 @@ Feature: User Authentication tests
     And User enter the username as "DevDev"
     And User enter the password as "DevDev1234"
     When User click on the login button
-    Then Login should be success
+    Then Login should be success as "DevDev"
 
   Scenario: Login should not be success
     Given User enter the username as "DevDev1"
