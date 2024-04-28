@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "pretest": "npx ts-node src/helper/init.ts",
     "test": "cucumber-js test || true",
     "posttest": "npx ts-node src/helper/report.ts",
     "test:failed": "cucumber-js -p rerun @rerun.txt"
@@ -20,6 +21,7 @@
     "@playwright/test": "^1.43.1",
     "@types/node": "^20.12.7",
     "cucumber-html-reporter": "^7.1.1",
+    "fs-extra": "^11.2.0",
     "multiple-cucumber-html-reporter": "^3.6.2",
     "playwright": "^1.43.1",
     "ts-node": "^10.9.2"
