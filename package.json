@@ -1,0 +1,24 @@
+{
+  "name": "playwrightcucumber",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js test"
+  },
+  "keywords": [
+    "playwright",
+    "cucumber"
+  ],
+  "author": "Chandra.S",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.6.0",
+    "@cucumber/pretty-formatter": "^1.0.1",
+    "@playwright/test": "^1.43.1",
+    "@types/node": "^20.12.7",
+    "cucumber-html-reporter": "^7.1.1",
+    "playwright": "^1.43.1",
+    "ts-node": "^10.9.2"
+  }
+}
