@@ -16,7 +16,8 @@
     ],
     "format": [
       "progress-bar",
-      "html:cucumber-report.html"
+      "html:test-results/cucumber-report.html",
+      "json:test-results/cucumber-report.json"
     ]
   },
   "parallel": 3
