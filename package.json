@@ -26,6 +26,7 @@
     "fs-extra": "^11.2.0",
     "multiple-cucumber-html-reporter": "^3.6.2",
     "playwright": "^1.43.1",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "winston": "^3.13.0"
   }
 }
