@@ -16,8 +16,8 @@
     ],
     "format": [
       "progress-bar",
-      "html:test-results/cucumber-report.html",
-      "json:test-results/cucumber-report.json",
+      "html:test-results/reports/cucumber-report.html",
+      "json:test-results/reports/cucumber-report.json",
       "rerun:@rerun.txt"
     ],
     "parallel": 2
@@ -36,8 +36,8 @@
     ],
     "format": [
       "progress-bar",
-      "html:test-results/cucumber-report.html",
-      "json:test-results/cucumber-report.json",
+      "html:test-results/reports/cucumber-report.html",
+      "json:test-results/reports/cucumber-report.json",
       "rerun:@rerun.txt"
     ],
     "parallel": 2
