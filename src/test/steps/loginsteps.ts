@@ -35,7 +35,7 @@ When("User click on the login button", async function () {
 Then("Login should be success as {string}", async function (username) {
   const user = await pageFixture.page.locator("(//span[@class='mdc-button__label']//span)[1]" );
   await expect(user).toBeVisible(username);
-  await expect(user).toBe(username);    // This is to force the test fails here
+  //await expect(user).toBe(username);    // This is to force the test fails here
   const userName = await user.textContent();
   console.log("Username: " + userName);
   await pageFixture.logger.info("Login is successfull...." + "Username: " + userName);
