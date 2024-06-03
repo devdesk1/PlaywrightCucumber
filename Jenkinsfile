@@ -1,12 +1,12 @@
 pipeline {
     agent any
     environment {
-        GITHUB_REPO = 'https://github.com/your-username/your-repo'
+        GITHUB_REPO = 'https://github.com/devdesk1/PlaywrightCucumber.git'
     }
     stages {
         stage('Clone Repository') {
             steps {
-                git url: "${GITHUB_REPO}", branch: 'main'
+                git url: "${GITHUB_REPO}", branch: 'master'
             }
         }
         stage('Build') {
