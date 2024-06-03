@@ -1,43 +1,53 @@
 pipeline {
     agent any
+
     environment {
-        GITHUB_REPO = 'https://github.com/devdesk1/PlaywrightCucumber.git'
+        NODE_VERSION = '16.x' // Specify the Node.js version you need
     }
+
     stages {
-        stage('Clone Repository') {
+        stage('Checkout') {
             steps {
-                git url: "${GITHUB_REPO}", branch: 'master'
+                // Clone the repository
+                git url: 'https://github.com/devdesk1/PlaywrightCucumber.git', branch: 'master'
             }
         }
-        stage('Build') {
+        
+        stage('Setup Node.js') {
             steps {
-                // Add build steps here
-                sh 'echo "Building project..."'
+                // Install Node.js
+                script {
+                    def nodeHome = tool name: "NodeJS ${env.NODE_VERSION}", type: 'NodeJS'
+                    env.PATH = "${nodeHome}/bin:${env.PATH}"
+                }
             }
         }
-        stage('Test') {
+
+        stage('Install Dependencies') {
             steps {
-                // Add test steps here
-                sh 'echo "Running tests..."'
+                // Install npm dependencies
+                sh 'npm install'
             }
         }
-        stage('Deploy') {
+
+        stage('Run Playwright Tests') {
             steps {
-                // Add deployment steps here
-                sh 'echo "Deploying application..."'
+                // Run Playwright tests
+                sh 'npx playwright test'
             }
         }
     }
+
     post {
         always {
-            // Cleanup or notifications
-            echo 'This will always run'
+            // Archive test results or perform other cleanup actions
+            archiveArtifacts artifacts: 'playwright-report/**', allowEmptyArchive: true
         }
         success {
-            echo 'This will run only if the build succeeds'
+            echo 'Playwright tests passed successfully!'
         }
         failure {
-            echo 'This will run only if the build fails'
+            echo 'Playwright tests failed. Please check the logs.'
         }
     }
 }
